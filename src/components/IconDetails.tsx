@@ -1,3 +1,4 @@
+import { snakeCase,pascalCase } from "change-case";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { Copy } from "iconsax-react";
@@ -5,10 +6,8 @@ import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { IoClose } from "react-icons/io5";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import dynamic from "next/dynamic";
 import { Variant } from "../components/TabBar";
 import { IconType } from "../data/icons";
-import stringToCamal from "../utils/stringToCamal";
 
 const a11yDark = {
   "hljs-comment": {
@@ -117,7 +116,7 @@ const IconDetails = (props: IconDetailsProps) => {
 
   const [active, setActive] = useState("React");
 
-  const icon = stringToCamal(name);
+  const icon = pascalCase(name);
 
   const jsxString = ` import { ${icon} } from "iconsax-react"
 
@@ -143,7 +142,7 @@ const IconDetails = (props: IconDetailsProps) => {
     @override
     Widget build(BuildContext context) {
       return Center(
-        child: const Icon(Iconsax.${stringToCamal(name, true)}),
+        child: const Icon(Iconsax.${snakeCase(name)}),
       );
     }
   }`;
