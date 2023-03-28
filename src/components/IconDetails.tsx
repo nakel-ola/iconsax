@@ -1,4 +1,4 @@
-import { snakeCase,pascalCase } from "change-case";
+import { snakeCase } from "change-case";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { Copy } from "iconsax-react";
@@ -8,6 +8,7 @@ import { IoClose } from "react-icons/io5";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { Variant } from "../components/TabBar";
 import { IconType } from "../data/icons";
+import stringToCamal from "../utils/stringToCamal";
 
 const a11yDark = {
   "hljs-comment": {
@@ -116,7 +117,7 @@ const IconDetails = (props: IconDetailsProps) => {
 
   const [active, setActive] = useState("React");
 
-  const icon = pascalCase(name);
+  const icon = stringToCamal(name);
 
   const jsxString = ` import { ${icon} } from "iconsax-react"
 
