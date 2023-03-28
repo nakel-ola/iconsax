@@ -132,7 +132,7 @@ const IconDetails = (props: IconDetailsProps) => {
     )
   }
 
-    export default Example;`;
+  export default Example;`;
 
   const dartString = `  import 'package:flutter/material.dart';
   import 'package:flutter_iconsax/flutter_iconsax.dart';
