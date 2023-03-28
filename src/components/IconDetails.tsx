@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { IoClose } from "react-icons/io5";
 import SyntaxHighlighter from "react-syntax-highlighter";
-// import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import dynamic from "next/dynamic";
 import { Variant } from "../components/TabBar";
 import { IconType } from "../data/icons";
@@ -144,7 +143,7 @@ const IconDetails = (props: IconDetailsProps) => {
     @override
     Widget build(BuildContext context) {
       return Center(
-        child: const Iconsax(Iconsaxs.${stringToCamal(name, true)}),
+        child: const Icon(Iconsax.${stringToCamal(name, true)}),
       );
     }
   }`;
